@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import { ref } from 'vue';
+// import HelloWorld from './components/HelloWorld.vue'
+import { ref, defineAsyncComponent } from 'vue';
 
-const dynamicComponent = ref(HelloWorld);
-
+// const dynamicComponent = ref(HelloWorld);
+const HelloWorld = defineAsyncComponent(() => import('./components/HelloWorld.vue'));
 
 </script>
 
@@ -13,8 +13,8 @@ const dynamicComponent = ref(HelloWorld);
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <!-- <HelloWorld msg="You did it!" /> -->
-      <component v-bind:is="dynamicComponent" msg="You did it!"></component>
+      <HelloWorld msg="You did it!" />
+      <!-- <component v-bind:is="dynamicComponent" msg="You did it!"></component> -->
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
