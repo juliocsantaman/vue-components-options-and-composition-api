@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 
 import Menu from '../components/Menu.vue';
 
@@ -24,6 +24,21 @@ export default {
   }
 
 }
+</script> -->
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import Menu from '../components/Menu.vue';
+
+let show = ref(false);
+
+function toggleMenu() {
+  show.value = !show.value;
+  console.group('Test.vue => toggleMenu');
+  console.log('show value', show.value);
+  console.groupEnd();
+}
+
 </script>
 
 <template>
