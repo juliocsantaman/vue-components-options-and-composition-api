@@ -40,7 +40,9 @@ function toggleMenu() {
 }
 
 function handleClick(data: string) {
+  console.group('Test.vue => handleClick');
   console.log(data);
+  console.groupEnd();
 }
 
 </script>

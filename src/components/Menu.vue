@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 
 export default {
     data() {
@@ -16,7 +16,24 @@ export default {
     }
 }
 
+</script> -->
+
+<script setup lang="ts">
+
+const emit = defineEmits<{
+    (event: 'clickInItem', message: string): void;
+}>();
+
+
+function clickInItem(): void {
+    console.group('Menu.vue => clickInItem');
+    console.log('clickInItem');
+    console.groupEnd();
+    emit('clickInItem', 'Hello from child');
+}
+
 </script>
+
 
 <template>
     <section class="menu">
