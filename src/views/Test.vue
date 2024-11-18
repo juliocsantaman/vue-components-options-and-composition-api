@@ -39,6 +39,10 @@ function toggleMenu() {
   console.groupEnd();
 }
 
+function handleClick(data: string) {
+  console.log(data);
+}
+
 </script>
 
 <template>
@@ -47,7 +51,7 @@ function toggleMenu() {
 
     <button type="button" v-on:click="toggleMenu">Menu</button>
     <Transition name="menuTransition">
-      <Menu v-if="show" />
+      <Menu v-if="show" v-on:clickInItem="handleClick"/>
     </Transition>
   </div>
 </template>
